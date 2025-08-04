@@ -1,0 +1,37 @@
+{
+    "name": "RefleQtions",
+    "short_name": "RefleQ",
+    "start_url": "./login.php",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4a90e2",
+    "screenshots": [
+  {
+    "src": "assets/img/sc1.jpg",
+    "sizes": "1052x2048",
+    "type": "image/jpg",
+    "form_factor": "narrow"
+  },
+  {
+    "src": "assets/img/sc2.jpg",
+    "sizes": "1047x2048",
+    "type": "image/jpg",
+    "form_factor": "wide"
+  }
+]
+,
+    "icons": [
+      {
+        "src": "./assets/img/logo2.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/img/logo2.png",
+        "sizes": "1024x1024",
+        "type": "image/png"
+      }
+    ]
+  }
+  
+

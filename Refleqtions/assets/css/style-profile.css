@@ -1,0 +1,259 @@
+      /* Your existing styles */
+      body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 85vh;
+        margin: 0;
+    }
+
+    .profile-container {
+        display: flex;
+        justify-content: space-between;
+        background-color: #0a214f6b;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 7px 5px rgba(0, 0, 0, 0.499);
+        width: 80%;
+        max-width: 1000px;
+        margin-top: 10px;
+    }
+
+    .profile-left {
+        width: 40%;
+        text-align: center;
+    }
+
+    h2{   
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    color: #0a214f;
+    }
+
+    h3 {
+        display: block;
+        font-size: 1.17em;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+        unicode-bidi: isolate;
+        text-align: left;
+        color: #0a214f;
+    }
+
+    p {
+       display: block;
+       margin-block-start: 1em;
+       margin-block-end: 1em;
+       margin-inline-start: 0px;
+       margin-inline-end: 0px;
+       unicode-bidi: isolate;
+       text-align: justify;
+       color: white;
+    }
+    .profile-left img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 5px;
+    }
+
+    .profile-field {
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+
+    .profile-field label {
+        font-weight: bold;
+        color: #0a214f;
+    }
+
+    .profile-field p {
+        margin: 5px 0;
+        color: white;
+    }
+
+    .btn-edit {
+        background-color: #0a214f;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-edit:hover {
+        background-color: #4169E1;
+    }
+
+    .btn-prf {
+        background-color: #0a214f;
+        color: white;
+        padding: 15px 20px;
+        margin-top: -100px;
+        margin-left: 100px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: background-color 0.3s;
+    }
+
+    .btn-prf:hover {
+        background-color: #4169E1;
+    }
+
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1200; /* Higher z-index for modals */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    }
+    
+    /* Modal Content */
+    /* General modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content container */
+.modal-content {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 434px;
+    max-height: 70vh; /* Set max height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.modal .close:hover {
+    color: #ff0000;
+}
+
+    
+    /* Modal Title */
+    .modal-content h2 {
+        color: #A3BFD9; /* Title color */
+        margin-bottom: 20px; /* Space below title */
+    }
+    
+    /* Profile Section Styles */
+    .profile-section {
+        margin-bottom: 15px; /* Space between sections */
+    }
+    
+    .profile-section label {
+        display: block; /* Make labels block elements */
+        margin-bottom: 5px; /* Space below labels */
+        font-weight: bold; /* Bold text */
+        color: #333; /* Label color */
+    }
+    
+    .profile-section input[type="text"],
+    .profile-section input[type="email"],
+    .profile-section input[type="date"],
+    .profile-section input[type="password"],
+    .profile-section select {
+        width: 100%; /* Full width of input/select */
+        padding: 10px; /* Padding inside inputs */
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 5px; /* Rounded corners */
+        box-sizing: border-box; /* Include padding in width */
+        font-size: 16px; /* Font size */
+        transition: border-color 0.3s; /* Transition for border color */
+    }
+    
+    /* Focus state for inputs */
+    .profile-section input:focus,
+    .profile-section select:focus {
+        border-color: #0047AB; /* Change border color on focus */
+        outline: none; /* Remove default outline */
+    }
+    
+    /* Button Styles */
+    .modal-button {
+        background-color: #A3BFD9; /* Button background color */
+        border: none; /* Remove border */
+        color: white; /* Text color */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Inline block */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer cursor */
+        border-radius: 5px; /* Rounded corners */
+        margin: 5px; /* Margin around buttons */
+        transition: background-color 0.3s; /* Transition for background color */
+    }
+    
+    .modal-button:hover {
+        background-color: #4169E1; /* Darker shade on hover */
+    }
+
+    .quote-textarea {
+        width: 100%; /* Full width of the modal */
+        max-width: 500px; /* Limit maximum width */
+        height: 100px; /* Set a fixed height */
+        padding: 10px; /* Add some padding */
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 5px; /* Rounded corners */
+        resize: none; /* Disable resizing */
+        font-size: 16px; /* Font size */
+        font-family: Arial, sans-serif; /* Font family */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: border-color 0.3s; /* Transition for border color */
+        margin: 0 auto; /* Center the textarea */
+    }
+
+    /* Focus state for the textarea */
+    .quote-textarea:focus {
+        border-color: #0047AB; /* Change border color on focus */
+        outline: none; /* Remove default outline */
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .modal-content {
+            width: 90%;
+            height: fit-content; /* Adjust modal width on small screens */
+        }
+    }

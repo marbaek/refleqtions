@@ -1,0 +1,206 @@
+/* LOGIN STYLE */
+body {
+    background-image: url('../img/background.png');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.textbox {
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #fff;
+    width: 300px;
+    height: 40px;
+    color: rgb(12, 36, 84); /* Placeholder color */
+    padding: 3px 5px 3px 19px;
+    font-size: 1.5em;
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 1px solid #ccc;
+    transition: width 0.3s ease;
+}
+
+.textbox:focus {
+    width: 400px;
+    color: #000; /* Input text color */
+}
+
+.submitbutton {
+    background-color: rgb(17, 45, 106);
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.submitbutton:hover {
+    background: linear-gradient(90deg, #2d375a, #5d6d9a, #a3b8d9);
+    cursor: pointer;
+}
+
+#hideBox {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -198px;
+    margin-left: -225px;
+}
+
+#highBox {
+    background: linear-gradient(135deg, rgb(156, 156, 156), rgb(121, 159, 215));
+    border-radius: 16px; /* Increased curve */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    height: 350px; /* Slightly taller height */
+    width: 430px;
+    padding: 10px; /* Adds padding for inner content */
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logoBox {
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* Adjust the logo size here */
+#logoBox img {
+    width: 100px; /* Adjust width to desired size */
+    height: auto; /* Keeps aspect ratio */
+}
+
+/* Other existing styles */
+#lowBox {
+    background: linear-gradient(135deg, rgb(69, 90, 136), rgb(19, 36, 73));
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(59, 92, 238, 0.25);
+    padding: 20px;
+    top: 10%;
+    height: 100px;
+    width: 410px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+#lowBox:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(41, 177, 231, 0.35);
+}
+
+#lowBox p {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    text-align: center;
+    margin: 0;
+}
+
+.textDiv {
+    display: flex;
+    align-items: center;
+}
+
+/* Positioning the paragraph below the box */
+#threeP {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    color: #333; /* Light text for contrast */
+    text-align: center;
+    margin-top: 10px; /* Adds space between the box and the paragraph */
+}
+
+.textDiv {
+    display: flex;
+    align-items: center;
+}
+
+#info {
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -100px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #hideBox {
+        margin-top: -150px; /* Adjust for smaller screens */
+        margin-left: -150px; /* Center the box */
+    }
+
+    #highBox {
+        width: 90%; /* Make the box responsive */
+        height: auto; /* Allow height to adjust */
+    }
+
+    .textbox {
+        width: 80%; /* Make textbox responsive */
+        font-size: 1.2em; /* Adjust font size */
+    }
+
+    .submitbutton {
+        width: 80%; /* Make button responsive */
+        font-size: 1.2em; /* Adjust font size */
+    }
+
+    #lowBox {
+        width: 90%; /* Make lowBox responsive */
+        height: auto; /* Allow height to adjust */
+    }
+
+    #lowBox p {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    #threeP {
+        font-size: 12px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    #hideBox {
+        margin-top: -120px; /* Further adjust for very small screens */
+        margin-left: -120px; /* Center the box */
+    }
+
+    #highBox {
+        width: 95%; /* Make the box even more responsive */
+    }
+
+    .textbox {
+        width: 90%; /* Make textbox responsive */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    .submitbutton {
+        width: 90%; /* Make button responsive */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    #lowBox {
+        width: 95%; /* Make lowBox responsive */
+    }
+
+    #lowBox p {
+        font-size: 12px; /* Adjust font size */
+    }
+
+    #threeP {
+        font-size: 10px; /* Adjust font size */
+    }
+}

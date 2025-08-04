@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    color: white;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other content */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.navbar:hover {
+    background: linear-gradient(90deg, #1b2a52, #3b4a83, #6faac0);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.navbar h1 {
+    font-family: "Rubik Mono One", sans-serif;
+    font-style: normal;
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* User Links */
+.user {
+    display: flex;
+    align-items: center; /* Center align items */
+    gap: 10px; /* Space between links and separator */
+}
+
+.user .btn {
+    font-size: 16px; /* Font size */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+.user .btn:hover {
+    color: linear-gradient(90deg, #1d2b64, #4b6cb7, #85d8ce);
+}
+
+.separator {
+    color: #c2d8f0; /* Color for the separator */
+    font-weight: bold; /* Make separator bold */
+    font-size: 16px; /* Match font size with buttons */
+}
+
+/* Navigation Links */
+.navbar .user a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.navbar .user a:hover {
+    text-decoration: underline;
+    color: linear-gradient(90deg, #1d2b64, #4b6cb7, #85d8ce);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center align items */
+    padding: 60px 20px;
+    margin-top: 20px; /* Add margin to push the section down */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    color: #c2d8f0;
+    text-align: center; /* Center text */
+}
+
+.hero-content {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0a214f6b;
+    max-width: 600px;
+    margin-bottom: 40px;
+    margin-top: -70px;
+    padding: 40px;
+    border-radius: 10px;
+    z-index: 1;
+  }
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+span {
+    font-family: "Rubik Mono One", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Get Started Button */
+.get-started-btn {
+    padding: 15px 30px; /* Padding for the button */
+    background: linear-gradient(90deg, #2d375a, #5d6d9a, #a3b8d9);
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners for a pill shape */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+}
+
+.get-started-btn:hover {
+    background: linear-gradient(90deg, #1d2b64, #4b6cb7, #85d8ce);
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.features {
+    display: flex;
+    justify-content: space-around; /* Space out the features */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Limit the width of the features section */
+    margin: 0 auto; /* Center the features */
+}
+
+.feature {
+    background-color: #0a214f6b; /* Increased opacity for a lighter background */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px; /* Slightly rounded corners */
+    width: 30%; /* Set a fixed width for each feature */
+    text-align: center; /* Center text in feature cards */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.feature:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.feature i {
+    font-size: 36px; /* Larger icon size */
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+footer .footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .footer-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .footer-links li a:hover {
+    text-decoration: underline;
+    color: linear-gradient(90deg, #1d2b64, #4b6cb7, #85d8ce);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .navbar h1 {
+        font-size: 24px; /* Smaller font size for title */
+    }
+
+    .navbar .user a {
+        font-size: 16px; /* Smaller font size for links */
+    }
+
+    .hero-content h1 {
+        font-size: 36px; /* Smaller font size for hero title */
+    }
+
+    .hero-content p {
+        font-size: 16px; /* Smaller font size for hero paragraph */
+    }
+
+    .get-started-btn {
+        font-size: 16px; /* Smaller font size for button */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .features {
+        flex-direction: column; /* Stack features vertically */
+        align-items: center; /* Center align features */
+    }
+
+    .feature {
+        width : 80%; /* Set width to 80% for mobile */
+        margin: 10px 0; /* Adjust margin for spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 20px; /* Further reduce font size for title */
+    }
+
+    .navbar .user a {
+        font-size: 14px; /* Further reduce font size for links */
+    }
+
+    .hero-content h1 {
+        font-size: 28px; /* Further reduce font size for hero title */
+    }
+
+    .hero-content p {
+        font-size: 14px; /* Further reduce font size for hero paragraph */
+    }
+
+    .get-started-btn {
+        font-size: 14px; /* Further reduce font size for button */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    .features {
+        flex-direction: column; /* Stack features vertically */
+        align-items: center; /* Center align features */
+    }
+
+    .feature {
+        width: 90%; /* Set width to 90% for mobile */
+    }
+}

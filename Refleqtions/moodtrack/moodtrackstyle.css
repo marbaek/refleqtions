@@ -1,0 +1,173 @@
+html{
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.loading{
+  display: none;
+  z-index: 6;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.349);
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/*track mood button*/
+.track_button{
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: rgb(11, 112, 170);
+  color: white;
+  border-radius: 5px;
+}
+
+
+/*big mood icons sections*/
+.container_mood > img{
+  margin-top: -50px;
+  width: 70%;
+  max-width: 200px;
+  height: auto;
+  animation: scaleshadow 3s ease-in-out infinite;
+}
+.container_mood_icon{
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.container_mood_icon > img{
+  width: 100%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+/*popup comment clouds modify*/
+.mood_clouds{
+  position: absolute;
+  top: 0%;
+  right: -15%;
+  background: url(cloud.png);
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/*moodlist section modify*/
+.container_moodlist_items{
+  width: 100%;
+  height: 30vh;
+  overflow-y: scroll;
+  background-color: rgba(46, 46, 46, 0.178);
+}
+.container_moodlist_items::-webkit-scrollbar{
+  display: none;
+}
+.moodlist_item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  margin-top: 20px;
+  border: 1px solid black;
+  width: 90%;
+  max-width: 600px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: rgb(250, 250, 250);
+}
+.moodlist_item > img {
+  height: 70%;
+  width: auto;
+  margin: 0px 10px;
+  z-index: 1;
+}
+.image_animation{
+  animation: bounceSpin 2s ease-in-out infinite;
+}
+.moodlist_item > div > h1 {
+  font-size: 20px;
+  z-index: 1;
+  color: black;
+}
+
+.moodlist_item > button{
+  position: absolute;
+  right: 0;
+  height: 40%;
+  width: 30%;
+  z-index: 1;
+  border-radius: 10px;
+}
+.progress_bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 70%;
+}
+.container_percentage{
+  width: 95%;
+  height: 10px;
+  background-color: rgb(145, 145, 145);
+  border-radius: 3px;
+}
+.mood_percentage{
+  top: 0;
+  left: 0;
+  width: 90%;
+  border: 1px solid black;
+  height: 10px;
+  background-color: aqua;
+  border-radius: 3px;
+}
+
+
+@keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleshadow {
+    0% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes bounceSpin {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(0) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-20px) rotate(270deg);
+    }
+    100% {
+      transform: translateY(0) rotate(360deg);
+    }
+  }

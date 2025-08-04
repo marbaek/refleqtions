@@ -1,0 +1,501 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;           /* Ensures it covers the whole screen */
+  background-position: center;      /* Keeps it centered on all screen sizes */
+  background-attachment: fixed;     /* Optional: makes the background stay while scrolling */
+  background-color: #f5f5f5;        /* Fallback in case image doesn't load */
+}
+
+h1 {
+  font-family: 'Arial', sans-serif;
+  color: #0a214f;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+::selection{
+  color: #fff;
+  background: #618cf8;
+}
+.wrapper{
+  margin: 50px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
+
+.wrapper li{
+  height: 250px;
+  list-style: none;
+  border-radius: 5px;
+  margin-top: -20px;
+  padding: 15px 20px 20px;
+  background: #0a214f6b;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.add-box, .icon, .bottom-content, 
+.popup, .popup-header, .settings .menu li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-box{
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+}
+.add-box .icon{
+  height: 78px;
+  width: 78px;
+  color: #ADD8E6;
+  font-size: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  border: 2px dashed #c4cfe9;
+}
+.add-box p{
+  color: #A3BFD9;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.note{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.note .details{
+  max-height: 165px;
+  overflow-y: auto;
+}
+.note .details::-webkit-scrollbar,
+.popup textarea::-webkit-scrollbar{
+  width: 0;
+}
+.note .details:hover::-webkit-scrollbar,
+.popup textarea:hover::-webkit-scrollbar{
+  width: 5px;
+}
+.note .details:hover::-webkit-scrollbar-track,
+.popup textarea:hover::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.note .details:hover::-webkit-scrollbar-thumb,
+.popup textarea:hover::-webkit-scrollbar-thumb{
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.note p{
+  font-size: 22px;
+  font-weight: bold;
+  color: #c2d8f0;
+  cursor: pointer;
+}
+.note span {
+  display: block;
+  color: rgb(253, 253, 253);
+  font-size: 16px;
+  margin-top: 5px;
+  word-wrap: break-word;    /* Allows long words to break and wrap to the next line */
+  word-break: break-word;   /* Adds extra control over word wrapping */
+  max-height: 140px;        /* Limit the height of the description box */
+  overflow-y: auto;         /* Add vertical scrolling when content exceeds max-height */
+}
+
+/* Optional: Style the scrollbar for a more refined look */
+.note span::-webkit-scrollbar {
+  width: 5px;              /* Set the width of the scrollbar */
+}
+
+.note span::-webkit-scrollbar-thumb {
+  background: #888;        /* Scrollbar color */
+  border-radius: 10px;     /* Rounded edges for the scrollbar */
+}
+
+.note span::-webkit-scrollbar-thumb:hover {
+  background: #555;        /* Darker scrollbar color on hover */
+}
+
+
+.note .bottom-content{
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+.bottom-content span{
+  color: #c2d8f0;
+  font-size: 11px;
+}
+.bottom-content .settings{
+  position: relative;
+}
+.bottom-content .settings i{
+  color: #A3BFD9;
+  cursor: pointer;
+  font-size: 15px;
+}
+.settings .menu{
+  z-index: 1;
+  bottom: 0;
+  right: -5px;
+  padding: -2px 0;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: bottom right;
+  background-color: #0a214f6b;
+  transition: transform 0.2s ease;
+}
+.settings.show .menu{
+  transform: scale(1);
+}
+.settings .menu li{
+  background-color: #4d5f79;
+  color: white  ;
+  height: 25px;
+  font-size: 16px;
+  padding: 17px 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: none;
+  border-radius: 0;
+  justify-content: flex-start;
+}
+.menu li:last-child{
+  margin-bottom: 0;
+}
+.menu li:hover{
+  background: #101f31;
+}
+.menu li i{
+  padding-right: 8px;
+}
+
+.popup-box{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
+}
+.popup-box .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  max-width: 800px; /* Increased from 400px to 800px */
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.popup-box, .popup{
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.popup-box.show, .popup-box.show .popup{
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-box.show .popup{
+  transform: translate(-50%, -50%) scale(1);
+}
+.popup .content{
+  border-radius: 5px;
+  background: #fff;
+  width: calc(100% - 15px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.content .popup-header{
+  padding: 15px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.content .popup-header p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.content .popup-header i{
+  color: #8b8989;
+  cursor: pointer;
+  font-size: 23px;
+}
+.content form{
+  margin: 15px 25px 35px;
+}
+.content form .row{
+  margin-bottom: 20px;
+}
+form .row label{
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+form :where(input, textarea){
+  height: 40px;
+  width: 90%;
+  outline: none;
+  font-size: 17px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+form :where(input, textarea):focus{
+  box-shadow: 0 2px 4px rgba(0,0,0,0.11);
+}
+form .row textarea {
+  height: 400px; /* Adjust height to your preference */
+  resize: none;  /* Prevent manual resizing */
+  padding: 8px 15px; /* Keep padding the same */
+}
+
+form button{
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 4px;
+  background: #0a214f;
+}
+/* Overall popup box */
+.view-popup {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.view-popup-box {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* View Popup Styling */
+.view-popup {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  height: 80%;
+  max-width: 600px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* Header with title and close icon */
+.view-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Close button */
+.view-popup-header .uil-times {
+  font-size: 25px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Content Styling */
+.view-content {
+  display: flex;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  max-height: none;   
+  height: 480px;     /* Initial max height */
+  overflow: auto;          /* Show scrollbars when needed */
+  padding-right: 10px;     /* Room for scrollbar */
+  flex-direction: column;  
+  gap: 10px;               
+}
+
+.view-content h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2d3748;
+}
+
+.view-content::-webkit-resizer {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.view-content p {
+  margin: 0;               /* Reset default margins */
+  padding-bottom: 0px;    /* Space below each paragraph */
+  font-size: 16px;
+  color: #4a5568;
+  line-height: 1.6;        /* Improve readability */
+  word-break: break-word;  /* Prevent overflow on long words */
+}
+
+
+.view-content span {
+  font-style: italic;
+  color: #718096;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* On hover, shadow effect for the view-popup */
+.view-popup:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+}
+
+.mood-options label {
+  color: black; /* Default color */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+}
+
+.mood-happy.active {
+  color: yellowgreen;
+}
+
+.mood-sad.active {
+  color: blue;
+}
+
+.mood-excited.active {
+  color: orange;
+}
+
+.mood-angry.active {
+  color: red;
+}
+
+.mood-relaxed.active {
+  color: green;
+}
+
+.mood-options label.active {
+  font-weight: bold;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #0a214f;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 300px;
+  width: 80%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirm-button,
+.cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background-color: #d9534f;
+  color: white;
+}
+
+.cancel-button {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.confirm-button:hover {
+  background-color: #c9302c;
+}
+
+.cancel-button:hover {
+  background-color: #31b0d5;
+}
+/* Overlay container */
+.view-popup-box {
+  display: none;          /* default hidden */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;       /* enable vertical scroll */
+  padding: 20px;
+  z-index: 9999;
+}
+
+#view-attachment {
+  text-align: center;      /* center the image/link */
+}
+
+#view-attachment img {
+  display: inline-block;
+  max-width: 90%;          /* responsive width */
+  max-height: 50vh;        /* limit height */
+  object-fit: contain;
+  border-radius: 8px;
+}

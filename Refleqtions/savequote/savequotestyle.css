@@ -1,0 +1,100 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.title{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    background-color: rgb(0, 204, 255);
+}
+.body_container_quotes{
+    position: relative;
+    position: relative;
+    margin-top: 10vh;
+    width: 100vw;
+    height: 85vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.body_container_quotes::-webkit-scrollbar {
+  display: none;
+}
+.container_quotes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*individual qoutes container*/
+.quote_container{
+    padding: 10px 10px;
+    min-width: 100px;
+    width: 150px;
+    background-color: #0a214f6b;
+    border-radius: 5px;
+    border: 0.5px solid black;
+}
+.quote_buttons button{
+    border-radius: 5px;
+    color: white;
+    border: 1px solid black;
+    width: 100px;
+    height: 40px;
+    background-color: #001c53;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item > h2, .item > p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-word;
+    pointer-events: none;
+    color: black;
+    color: white;
+}
+
+/*View Qoute Elements*/
+.view_quote{
+    padding: 0px 20px;
+    text-align: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../assets/img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+    font-size: 30px;
+}
+.quote_buttons{
+    position: absolute;
+    bottom: 0;
+    font-size: 15px;
+}
+.quote_buttons button{
+    width: 70px;
+    height: 30px;
+    background-color: rgb(4, 51, 151);
+}
+
+#confirm_buttons{
+    display: none;
+}
